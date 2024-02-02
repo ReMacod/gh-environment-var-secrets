@@ -1,0 +1,24 @@
+name: Generate Email Templates
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install Dependencies
+        run: pnpm i
+
+      - name: Email Templates - Fetch, Generate, Build, Patch
+        run: |
+          echo "hello testing"
